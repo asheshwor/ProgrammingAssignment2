@@ -30,14 +30,14 @@ makeCacheMatrix <- function(x = matrix()) {
 
 cacheSolve <- function(x, ...) {
   #return inverse of the matrix
-  m <- x$getinverse()
-  if(!is.null(m)) {
+  minv <- x$getinverse()
+  if(!is.null(minv)) {
     message("retriving cached data") #return message to console
-    return(m)
+    return(minv)
   }
   mat <- x$get()
-  m <- solve(mat, ...)
-  x$setinverse(m)
-  m #return inverse
+  minv <- solve(mat, ...)
+  x$setinverse(minv)
+  minv #return inverse
 }
 
